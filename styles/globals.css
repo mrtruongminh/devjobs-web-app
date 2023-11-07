@@ -60,3 +60,11 @@ h6 {
 #__next {
   isolation: isolate;
 }
+/*
+  9. Full height
+*/
+html,
+body,
+#__next {
+  height: 100%;
+}

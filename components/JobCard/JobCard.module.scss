@@ -1,0 +1,65 @@
+@use "colors";
+
+.card {
+  width: 350px;
+  height: 228px;
+  border-radius: 6px;
+  padding: 49px 32px 36px;
+  background-color: colors.$color-white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  top: -25px;
+  left: 32px;
+  background-color: #e99210;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textWrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+
+  span {
+    color: colors.$color-dark-grey;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  div {
+    width: 4px;
+    height: 4px;
+    margin-bottom: 4px;
+    background-color: colors.$color-dark-grey;
+  }
+}
+
+.textPrimary {
+  color: colors.$color-very-dark-blue;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.textSecondary {
+  color: colors.$color-dark-grey;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.textTertiary {
+  color: #5964e0;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+}
