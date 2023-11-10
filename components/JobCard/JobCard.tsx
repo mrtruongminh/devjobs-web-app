@@ -2,7 +2,7 @@ import styles from "./JobCard.module.scss";
 import Image from "next/image";
 import myImg from "@/public/logos/scoot.svg";
 
-function JobCard() {
+export default function JobCard() {
   return (
     <div className={styles.card}>
       <div className={styles.logo}>
@@ -19,5 +19,3 @@ function JobCard() {
     </div>
   );
 }
-
-export default JobCard;

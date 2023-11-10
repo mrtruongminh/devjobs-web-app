@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 
 interface LayoutProps extends PropsWithChildren {}
 
-function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   return (
     <div className={styles.layout}>
       <Header />
@@ -12,5 +12,3 @@ function Layout({ children }: LayoutProps) {
     </div>
   );
 }
-
-export default Layout;

@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { ks } from "@/styles/fonts";
-import JobCard from "@/components/JobCard";
 import styles from "./Home.module.scss";
+import JobCard from "@/components/JobCard";
+import Button from "@/components/Button";
 
 export default function Home() {
   return (
