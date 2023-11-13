@@ -1,10 +1,41 @@
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { ks } from "@/styles/fonts";
 import styles from "./Home.module.scss";
 import JobCard from "@/components/JobCard";
 import Button from "@/components/Button";
+import type { Post } from "@/types";
+
+const PAGE_SIZE = 9;
 
 export default function Home() {
+  const [posts, setPosts] = useState<Post[]>([]);
+  const [isLoading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
+  const [isEol, setIsEol] = useState(false);
+  const initialized = useRef(false);
+
+  useEffect(() => {
+    if (!initialized.current) {
+      initialized.current = true;
+    } else {
+      fetch(`/api/posts?pageNum=${page}&pageSize=${PAGE_SIZE}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.length === 0 || data.length < PAGE_SIZE) {
+            setIsEol(true);
+          }
+          setPosts((prevPosts) => [...prevPosts, ...data]);
+          setLoading(false);
+        });
+    }
+  }, [page]);
+
+  const onLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
   return (
     <>
       <Head>
@@ -14,15 +45,16 @@ export default function Home() {
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
       <main className={`${ks.className} ${styles.main}`}>
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
-        <JobCard />
+        <div className={styles.grid}>
+          {posts.map((p) => (
+            <Link key={p.id} href={`/${p.id}`}>
+              <JobCard />
+            </Link>
+          ))}
+        </div>
+        {(!isEol || isLoading) && (
+          <Button onClick={onLoadMore}>Load More</Button>
+        )}
       </main>
     </>
   );

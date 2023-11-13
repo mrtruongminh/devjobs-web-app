@@ -1,9 +1,17 @@
 .main {
   padding: 145px 0 104px;
   display: grid;
-  // grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.grid {
+  display: grid;
   grid-template-columns: repeat(3, 350px);
-  // justify-items: center;
   justify-content: center;
   gap: 65px 30px;
+  margin-bottom: 56px;
+
+  a {
+    text-decoration: none;
+  }
 }
