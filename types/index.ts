@@ -1,4 +1,4 @@
-export type Post = {
+export type Job = {
   id: number;
   company: string;
   logo: string;

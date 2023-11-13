@@ -5,12 +5,12 @@ import { ks } from "@/styles/fonts";
 import styles from "./Home.module.scss";
 import JobCard from "@/components/JobCard";
 import Button from "@/components/Button";
-import type { Post } from "@/types";
+import type { Job } from "@/types";
 
 const PAGE_SIZE = 9;
 
 export default function Home() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [isLoading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [isEol, setIsEol] = useState(false);
@@ -20,13 +20,13 @@ export default function Home() {
     if (!initialized.current) {
       initialized.current = true;
     } else {
-      fetch(`/api/posts?pageNum=${page}&pageSize=${PAGE_SIZE}`)
+      fetch(`/api/jobs?pageNum=${page}&pageSize=${PAGE_SIZE}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.length === 0 || data.length < PAGE_SIZE) {
             setIsEol(true);
           }
-          setPosts((prevPosts) => [...prevPosts, ...data]);
+          setJobs((prevPosts) => [...prevPosts, ...data]);
           setLoading(false);
         });
     }
@@ -46,9 +46,9 @@ export default function Home() {
       </Head>
       <main className={`${ks.className} ${styles.main}`}>
         <div className={styles.grid}>
-          {posts.map((p) => (
-            <Link key={p.id} href={`/${p.id}`}>
-              <JobCard />
+          {jobs.map((job) => (
+            <Link key={job.id} href={`/${job.id}`}>
+              <JobCard {...job} />
             </Link>
           ))}
         </div>

@@ -1,21 +1,34 @@
 import styles from "./JobCard.module.scss";
 import Image from "next/image";
 import myImg from "@/public/logos/scoot.svg";
+import type { Job } from "@/types";
 
-export default function JobCard() {
+interface JobCardProps
+  extends Pick<
+    Job,
+    "postedAt" | "contract" | "position" | "company" | "location"
+  > {}
+
+export default function JobCard({
+  postedAt,
+  contract,
+  position,
+  company,
+  location,
+}: JobCardProps) {
   return (
     <div className={styles.card}>
       <div className={styles.logo}>
         <Image src={myImg} alt="Logo" />
       </div>
       <div className={styles.textWrapper}>
-        <span>5h ago</span>
+        <span>{postedAt}</span>
         <div />
-        <span>Full Time</span>
+        <span>{contract}</span>
       </div>
-      <span className={styles.textPrimary}>Senior Software Engineer</span>
-      <span className={styles.textSecondary}>Scoot</span>
-      <span className={styles.textTertiary}>United Kingdom</span>
+      <span className={styles.textPrimary}>{position}</span>
+      <span className={styles.textSecondary}>{company}</span>
+      <span className={styles.textTertiary}>{location}</span>
     </div>
   );
 }
