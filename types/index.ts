@@ -3,6 +3,8 @@ export type Job = {
   company: string;
   logo: string;
   logoBackground: string;
+  logoWidth: number;
+  logoHeight: number;
   position: string;
   postedAt: string;
   contract: string;

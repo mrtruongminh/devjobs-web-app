@@ -5,7 +5,7 @@ import logo from "@/public/desktop/logo.svg";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Image src={logo} alt="devjobs" />
+      <Image src={logo} priority alt="devjobs" />
     </header>
   );
 }
