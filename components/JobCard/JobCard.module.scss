@@ -1,11 +1,11 @@
-@use "colors";
+@use "common";
 
 .card {
   // width: 350px;
   height: 228px;
   border-radius: 6px;
   padding: 49px 32px 36px;
-  background-color: colors.$color-white;
+  background-color: common.$color-white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@
   margin-bottom: 16px;
 
   span {
-    color: colors.$color-dark-grey;
+    color: common.$color-dark-grey;
     font-size: 16px;
     font-weight: 400;
   }
@@ -39,19 +39,19 @@
     width: 4px;
     height: 4px;
     margin-bottom: 4px;
-    background-color: colors.$color-dark-grey;
+    background-color: common.$color-dark-grey;
   }
 }
 
 .textPrimary {
-  color: colors.$color-very-dark-blue;
+  color: common.$color-very-dark-blue;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 17px;
 }
 
 .textSecondary {
-  color: colors.$color-dark-grey;
+  color: common.$color-dark-grey;
   font-size: 16px;
   font-weight: 400;
 }

@@ -1,4 +1,4 @@
-@use "colors";
+@use "common";
 
 .button {
   width: 141px;
@@ -6,13 +6,13 @@
   border-radius: 5px;
   background-color: #5964e0;
   border: 1px solid #5964e0;
-  color: colors.$color-white;
+  color: common.$color-white;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
 
   &:hover {
-    background-color: colors.$color-light-violet;
-    border-color: colors.$color-light-violet;
+    background-color: common.$color-light-violet;
+    border-color: common.$color-light-violet;
   }
 }

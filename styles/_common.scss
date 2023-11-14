@@ -3,9 +3,13 @@ $color-violet: #9e7f66;
 $color-light-violet: #939bf4;
 $color-very-dark-blue: #19202d;
 $color-midnight: #121721;
-
 // Secondary colors
 $color-white: #ffffff;
 $color-light-grey: #f4f6f8;
 $color-gray: #9daec2;
 $color-dark-grey: #6e8098;
+
+// Breakpoints
+$breakpoint-small: 375px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1440px;

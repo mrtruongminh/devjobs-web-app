@@ -1,7 +1,17 @@
+@use "common";
+
 .main {
   padding: 145px 0 104px;
   display: grid;
   justify-items: center;
+
+  @media (max-width: common.$breakpoint-large) {
+    padding: 85px 39px 61px;
+  }
+
+  @media (max-width: common.$breakpoint-medium) {
+    padding: 97px 24px 62px;
+  }
 }
 
 .grid {
@@ -10,8 +20,22 @@
   justify-content: center;
   gap: 65px 30px;
   margin-bottom: 56px;
-
   a {
     text-decoration: none;
+  }
+
+  @media (max-width: common.$breakpoint-large) {
+    grid-template-columns: repeat(2, 339px);
+    gap: 65px 11px;
+  }
+
+  @media (max-width: common.$breakpoint-medium) {
+    grid-template-columns: 327px;
+    gap: 49px;
+  }
+
+  @media (max-width: common.$breakpoint-medium) {
+    grid-template-columns: 1fr;
+    gap: 49px;
   }
 }

@@ -1,6 +1,6 @@
-@use "colors";
+@use "common";
 
 .layout {
-  background-color: colors.$color-light-grey;
+  background-color: common.$color-light-grey;
   min-height: 100%;
 }
