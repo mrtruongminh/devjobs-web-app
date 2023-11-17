@@ -34,8 +34,7 @@
     gap: 49px;
   }
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-small) {
     grid-template-columns: 1fr;
-    gap: 49px;
   }
 }
