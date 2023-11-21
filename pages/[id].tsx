@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const Job: NextPage<PageProps> = ({ job }) => {
   return (
-    <main className={`${ks.className} ${styles.main}`}>
+    <main className={`${ks.className} ${styles.wrapper}`}>
       <div className={styles.header}>
         <div
           className={styles.headerLogo}
@@ -46,6 +46,41 @@ const Job: NextPage<PageProps> = ({ job }) => {
           <span>scoot.com</span>
         </div>
         <Button className={styles.headerButton}>Company Site</Button>
+      </div>
+      <div className={styles.main}>
+        <section>
+          <div className={styles.mainHeader}>
+            <div className={styles.mainHeaderTexts}>
+              <div>
+                <span>{job.postedAt}</span>
+                <div />
+                <span>{job.contract}</span>
+              </div>
+              <span>{job.position}</span>
+              <span>{job.location}</span>
+            </div>
+            <Button>Apply Now</Button>
+          </div>
+          <p className={styles.paragraph}>{job.description}</p>
+        </section>
+        <section>
+          <span className={styles.sectionTitle}>Requirements</span>
+          <p className={styles.paragraph}>{job.requirements.content}</p>
+          <ul className={`${styles.list} ${styles.unorderedList}`}>
+            {job.requirements.items.map((n, idx) => (
+              <li key={idx}>{n}</li>
+            ))}
+          </ul>
+        </section>
+        <section>
+          <span className={styles.sectionTitle}>What You Will Do</span>
+          <p className={styles.paragraph}>{job.role.content}</p>
+          <ol className={`${styles.list} ${styles.orderedList}`}>
+            {job.role.items.map((n, idx) => (
+              <li key={idx}>{n}</li>
+            ))}
+          </ol>
+        </section>
       </div>
     </main>
   );
