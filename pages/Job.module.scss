@@ -53,6 +53,7 @@
   display: grid;
   grid-row-gap: 40px;
   padding: 48px;
+  margin-bottom: 80px;
   background-color: common.$color-white;
 
   p {
@@ -144,5 +145,35 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 26px;
+  }
+}
+
+.footer {
+  background-color: common.$color-white;
+
+  & > div {
+    max-width: 730px;
+    margin: 0 auto;
+    padding: 23px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footerTexts {
+  display: grid;
+  grid-row-gap: 12px;
+
+  span:first-of-type {
+    color: common.$color-very-dark-blue;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  span:last-of-type {
+    color: common.$color-dark-grey;
+    font-size: 16px;
+    font-weight: 400;
   }
 }

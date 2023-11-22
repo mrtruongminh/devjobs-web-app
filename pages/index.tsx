@@ -3,6 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { ks } from "@/styles/fonts";
 import styles from "./Home.module.scss";
+import Header from "@/components/Header";
 import JobCard from "@/components/JobCard";
 import Button from "@/components/Button";
 import type { Job } from "@/types";
@@ -44,6 +45,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
+      <Header />
       <main className={`${ks.className} ${styles.main}`}>
         <div className={styles.grid}>
           {jobs.map((job) => (
