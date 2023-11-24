@@ -89,8 +89,8 @@ const Job: NextPage<PageProps> = ({ job }) => {
       <footer className={`${ks.className} ${styles.footer}`}>
         <div>
           <div className={styles.footerTexts}>
-            <span>Senior Software Engineer</span>
-            <span>So Digital Inc.</span>
+            <span>{job.position}</span>
+            <span>{job.company}</span>
           </div>
           <Button>Apply Now</Button>
         </div>

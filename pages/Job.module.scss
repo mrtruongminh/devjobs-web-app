@@ -3,6 +3,14 @@
 .wrapper {
   max-width: 730px;
   margin: -40px auto 0;
+
+  @media (max-width: common.$breakpoint-large) {
+    max-width: 689px;
+  }
+
+  @media (max-width: common.$breakpoint-medium) {
+    max-width: 327px;
+  }
 }
 
 .header {
@@ -13,6 +21,13 @@
   align-items: center;
   background-color: common.$color-white;
   margin-bottom: 32px;
+
+  @media (max-width: common.$breakpoint-medium) {
+    flex-direction: column;
+    height: unset;
+    padding: 49px 0 32px;
+    position: relative;
+  }
 }
 
 .headerLogo {
@@ -23,6 +38,15 @@
   align-items: center;
   justify-content: center;
   margin-right: 40px;
+
+  @media (max-width: common.$breakpoint-medium) {
+    margin-right: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    position: absolute;
+    top: -25px;
+  }
 }
 
 .headerTitle {
@@ -43,10 +67,18 @@
     font-size: 16px;
     font-weight: 400;
   }
+
+  @media (max-width: common.$breakpoint-medium) {
+    margin: 0 auto 24px;
+  }
 }
 
 .headerButton {
-  margin-right: 43px;
+  margin-right: 40px;
+
+  @media (max-width: common.$breakpoint-medium) {
+    margin-right: 0;
+  }
 }
 
 .main {
@@ -79,6 +111,7 @@
     display: flex;
     align-items: flex-end;
     gap: 12px;
+    margin-bottom: 11px;
 
     span {
       color: common.$color-dark-grey;
@@ -99,12 +132,14 @@
     color: common.$color-very-dark-blue;
     font-size: 28px;
     font-weight: 700;
+    margin-bottom: 14px;
   }
 
   & > span:last-of-type {
     color: #5964e0;
     font-size: 14px;
     font-weight: 700;
+    margin-bottom: 0;
   }
 }
 
