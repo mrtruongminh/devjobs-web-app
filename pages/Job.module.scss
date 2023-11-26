@@ -4,11 +4,11 @@
   max-width: 730px;
   margin: -40px auto 0;
 
-  @media (max-width: common.$breakpoint-large) {
+  @media (max-width: common.$breakpoint-laptop-min) {
     max-width: 689px;
   }
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     max-width: 327px;
   }
 }
@@ -22,7 +22,7 @@
   background-color: common.$color-white;
   margin-bottom: 32px;
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     flex-direction: column;
     height: unset;
     padding: 49px 0 32px;
@@ -39,7 +39,7 @@
   justify-content: center;
   margin-right: 40px;
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     margin-right: 0;
     width: 50px;
     height: 50px;
@@ -68,7 +68,7 @@
     font-weight: 400;
   }
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     margin: 0 auto 24px;
   }
 }
@@ -76,7 +76,7 @@
 .headerButton {
   margin-right: 40px;
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     margin-right: 0;
   }
 }

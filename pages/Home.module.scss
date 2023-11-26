@@ -1,22 +1,22 @@
 @use "common";
 
 .main {
-  padding: 145px 0 104px;
+  padding: 145px 40px 104px;
   display: grid;
   justify-items: center;
 
-  @media (max-width: common.$breakpoint-large) {
+  @media (max-width: common.$breakpoint-laptop-min) {
     padding: 85px 39px 61px;
   }
 
-  @media (max-width: common.$breakpoint-medium) {
+  @media (max-width: common.$breakpoint-tablet-min) {
     padding: 97px 24px 62px;
   }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(3, minmax(350px, 1fr));
   justify-content: center;
   gap: 65px 30px;
   margin-bottom: 56px;
@@ -24,17 +24,13 @@
     text-decoration: none;
   }
 
-  @media (max-width: common.$breakpoint-large) {
-    grid-template-columns: repeat(2, 339px);
+  @media (max-width: common.$breakpoint-laptop-min) {
+    grid-template-columns: repeat(2, minmax(339px, 1fr));
     gap: 65px 11px;
   }
 
-  @media (max-width: common.$breakpoint-medium) {
-    grid-template-columns: 327px;
+  @media (max-width: common.$breakpoint-tablet-min) {
+    grid-template-columns: minmax(327px, 1fr);
     gap: 49px;
-  }
-
-  @media (max-width: common.$breakpoint-small) {
-    grid-template-columns: 1fr;
   }
 }
